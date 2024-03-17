@@ -8,8 +8,8 @@
         private $conn;
 
         public function __construct() {
-            $this->username = getenv('USER_NAME');
-            $this->password = getenv('PASSWORD');
+            $this->username = 'postgres';
+            $this->password = 'postgres';
         }
 
         // DB connect
