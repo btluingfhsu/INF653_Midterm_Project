@@ -5,15 +5,15 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-include_once '../../config/Database.php';
-include_once '../../models/Quote.php';
+include_once '../../config/database.php';
+include_once '../../models/quote.php';
 include_once '../../helperFunctions/isValid.php';
 include_once '../../helperFunctions/notFound.php';
 include_once '../../helperFunctions/success.php';
 include_once '../../helperFunctions/fail.php';
 include_once '../../helperFunctions/missingParams.php';
-include_once '../../models/Author.php';
-include_once '../../models/Category.php';
+include_once '../../models/author.php';
+include_once '../../models/category.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 if ($method === 'OPTIONS') {
