@@ -10,8 +10,7 @@ class Category {
     }
 
     function create() {
-        $query = 'INSERT INTO ' . $this->table. '
-        SET category = :name';
+        $query = 'INSERT INTO ' . $this->table. ' (category) VALUES (:name) RETURNING id;';
 
         $stmt = $this->conn->prepare($query);
 

@@ -11,7 +11,7 @@ class Author {
 
     function create() {
         $query = 'INSERT INTO ' . $this->table. '
-            SET author = :name';
+        (author) VALUES (:name) RETURNING id;';
 
         $stmt = $this->conn->prepare($query);
 
@@ -20,7 +20,8 @@ class Author {
         $stmt->bindParam(':name', $this->name);
 
         if ($stmt->execute()) {
-            $this->id = $this->conn->lastInsertId();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $this->id = $result['id'];
             return true;
         }
 
