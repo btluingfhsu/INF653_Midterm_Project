@@ -3,13 +3,13 @@
         // DB parameters
         private $host = 'localhost';
         private $db_name = 'INF653_Midterm_Project';
-        private $username;
-        private $password;
+        private $username = 'postgres';
+        private $password = 'postgres';
         private $conn;
 
         public function __construct() {
-            $this->username = 'postgres';
-            $this->password = 'postgres';
+            $this->username;
+            $this->password;
         }
 
         // DB connect
