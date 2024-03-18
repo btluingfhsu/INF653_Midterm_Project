@@ -2,9 +2,9 @@
     class Database {
         // DB parameters
         private $host = 'localhost';
-        private $db_name = 'INF653_Midterm_Project';
+        private $db_name = 'quotesdb';
         private $username = 'postgres';
-        private $password = 'postgres';
+        private $password = 'P0$tGr3$!sFuck1nC@0l';
         private $conn;
 
         public function __construct() {
