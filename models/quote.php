@@ -41,8 +41,8 @@ class Quote {
     function read() {
         $query = 'SELECT q.id, q.quote, a.author, c.category 
             FROM ' . $this->table . ' q 
-            LEFT JOIN authors a ON q.authorId = a.id
-            LEFT JOIN categories c ON q.categoryId = c.id;';
+            LEFT JOIN authors a ON q.author_id = a.id
+            LEFT JOIN categories c ON q.category_id = c.id;';
 
         $stmt = $this->conn->prepare($query);
 
@@ -54,8 +54,8 @@ class Quote {
     function read_author() {
         $query = 'SELECT q.id, q.quote, a.author, c.category
             FROM ' . $this->table . ' q
-            LEFT JOIN authors a on  q.authorId = a.id
-            LEFT JOIN categories c on q.categoryId = c.id
+            LEFT JOIN authors a ON q.author_id = a.id
+            LEFT JOIN categories c ON q.category_id = c.id
             WHERE a.id = :authorId';
 
         $stmt = $this->conn->prepare($query);
@@ -70,8 +70,8 @@ class Quote {
     function read_category() {
         $query = 'SELECT q.id, q.quote, a.author, c.category
             FROM ' . $this->table . ' q
-            LEFT JOIN authors a on  q.authorId = a.id
-            LEFT JOIN categories c on q.categoryId = c.id
+            LEFT JOIN authors a ON  q.author_id = a.id
+            LEFT JOIN categories c ON q.category_id = c.id
             WHERE c.id = :categoryId';
 
         $stmt = $this->conn->prepare($query);
@@ -86,8 +86,8 @@ class Quote {
     function read_author_and_category() {
         $query = 'SELECT q.id, q.quote, a.author, c.category
             FROM ' . $this->table . ' q
-            LEFT JOIN authors a on  q.authorId = a.id
-            LEFT JOIN categories c on q.categoryId = c.id
+            LEFT JOIN authors a ON q.author_id = a.id
+            LEFT JOIN categories c on q.category_id = c.id
             WHERE a.id = :authorId AND c.id = :categoryId';
 
         $stmt = $this->conn->prepare($query);
@@ -99,10 +99,10 @@ class Quote {
     }
 
     function read_single() {
-        $query = 'SELECT q.id, q.quote, a.author, c.category, a.id AS "authorId", c.id AS "categoryId"
+        $query = 'SELECT q.id, q.quote, a.author, c.category
             FROM ' . $this->table . ' q
-            LEFT JOIN authors a on  q.authorId = a.id
-            LEFT JOIN categories c on q.categoryId = c.id
+            LEFT JOIN authors a ON  q.author_id = a.id
+            LEFT JOIN categories c ON q.category_id = c.id
             WHERE q.id = :id;';
 
         $stmt = $this->conn->prepare($query);
@@ -122,8 +122,8 @@ class Quote {
     function update() {
         $query = 'UPDATE ' . $this->table . ' 
             SET quote = :quote, 
-                authorId = :authorId, 
-                categoryId = :categoryId
+                author_id = :authorId, 
+                category_id = :categoryId
             WHERE id = :id;';
 
         $stmt = $this->conn->prepare($query);
