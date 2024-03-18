@@ -1,5 +1,5 @@
 <?php
-$conn = pg_connect("host=localhost dbname=quotesdb user=postgres password=P0$tGr3$!sFuck1nC@0l");
+$conn = pg_connect("host=localhost dbname=quotesdb user=postgres password=postgres");
 
 if (!$conn) {
     echo "An error occurred.\n";
