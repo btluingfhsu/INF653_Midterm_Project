@@ -15,7 +15,7 @@ class Quote {
     }
 
     function create() {
-        $query = 'INSERT INTO ' . $this->table . ' (quote, authorId, categoryId) 
+        $query = 'INSERT INTO ' . $this->table . ' (quote, author_id, category_id) 
             VALUES (:quote, :authorId, :categoryId);';
 
         $stmt = $this->conn->prepare($query);
@@ -41,8 +41,8 @@ class Quote {
     function read() {
         $query = 'SELECT q.id, q.quote, a.author, c.category 
             FROM ' . $this->table . ' q 
-            LEFT JOIN authors a on q.authorId = a.id
-            LEFT JOIN categories c on q.categoryId = c.id;';
+            LEFT JOIN authors a ON q.authorId = a.id
+            LEFT JOIN categories c ON q.categoryId = c.id;';
 
         $stmt = $this->conn->prepare($query);
 
