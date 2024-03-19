@@ -2,7 +2,7 @@
 
 function notFound($modelType) {
     echo json_encode(
-        array('message' => $modelType . 'Id Not Found')
+        array('message' => $modelType . '_id Not Found')
     );
 }
 

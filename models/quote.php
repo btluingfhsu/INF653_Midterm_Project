@@ -114,8 +114,6 @@ class Quote {
             $this->theQuote = $row['quote'];
             $this->theAuthor = $row['author'];
             $this->theCategory = $row['category'];
-            $this->authorId = $row['authorId'];
-            $this->categoryId = $row['categoryId'];
         }
     }
 
