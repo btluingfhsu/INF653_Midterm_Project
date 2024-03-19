@@ -29,8 +29,8 @@ if (!property_exists($data, 'id') || !property_exists($data, 'quote') || !proper
                 array(
                     'id' => $quo->id,
                     'quote' => $quo->theQuote,
-                    'authorId' => $quo->authorId,
-                    'categoryId' => $quo->categoryId
+                    'author_id' => $quo->authorId,
+                    'category_id' => $quo->categoryId
                 )
             );
         } else {
