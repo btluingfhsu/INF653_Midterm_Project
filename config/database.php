@@ -4,7 +4,7 @@
         private $host = 'localhost';
         private $db_name = 'quotesdb';
         private $username = 'postgres';
-        private $password = 'postgres';
+        private $password = 'P0$tGr3$!sC@0l';
         private $conn;
 
         public function __construct() {
